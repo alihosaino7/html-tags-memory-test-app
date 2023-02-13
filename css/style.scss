@@ -1,0 +1,197 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+$darkColor: hsl(0, 0%, 20%);
+$redColor: hsl(0, 96%, 72%);
+$greenColor: hsl(120, 52%, 50%);
+$mainFont: 'Poppins', sans-serif;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   height: 100vh;
+   font-family: $mainFont;
+}
+
+.container {
+
+   margin-top: 100px;
+   margin-left: auto;
+   margin-right: auto;
+   height: 100%;
+   padding: 0 1rem;
+   text-align: center;
+
+   @media (min-width: 576px) {
+      width: 540px;
+   }
+   
+   @media (min-width: 768px) {
+      width: 720px;
+   }
+   
+   @media (min-width: 992px) {
+      width: 960px;
+   }
+   
+   @media (min-width: 1200px) {
+      width: 1140px;
+   }
+
+   @media (min-width: 1400px) {
+      width: 1320px;
+   }
+
+   &__form-container {
+
+      border: 2px solid $darkColor;
+      box-shadow: 3px 3px 10px 0 rgba($darkColor, 0.367);
+      width: 80%;
+      overflow: hidden;
+      margin: 3rem auto;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      border-radius: .5rem;
+
+      @media (max-width: 575px) {
+         height: 35px;
+         width: 100%;
+         margin: 30px 0;
+      }
+
+      input {
+         
+         width: 100%;
+         height: 100%;
+         padding: 1rem;
+         border: none;
+         border-top-left-radius: .5rem;
+         border-bottom-left-radius: .5rem;
+         font-family: $mainFont;
+         font-size: 1rem;
+         color: $darkColor;
+
+         @media (max-width: 575px) {
+            padding: .5rem;
+            font-size: .8rem;
+         }
+
+         &::placeholder {
+            font: {
+               family: $mainFont;
+               size: 1rem;
+               weight: semi-bold;
+            }
+            @media (max-width: 575px) {
+               font-size: .8rem;
+            }
+         }
+
+         &:focus {
+            outline: none;
+         }
+      }
+
+      &__submit-button {
+
+         height: 100%;
+         width: 100px;
+         font-family: $mainFont;
+         font-size: 1rem;
+         letter-spacing: 1px;
+         outline: none;
+         border: none;
+         background-color: $darkColor;
+         color: white;
+         text-align: center;
+         padding: .5rem 0;
+         transition: 300ms;
+         cursor: pointer;
+
+         @media (max-width: 575px) {
+            font-size: .8rem;
+         }
+
+         &:hover {
+            background-color: #4f4f4f;
+            color: white;
+         }
+      }
+
+   }
+
+   &__heading {
+      text-align: center;
+      color: #4f4f4f;
+
+      p {
+         font-size: 1.2rem;
+         font-weight: 500;
+         margin-top: .3rem;
+
+         @media (max-width: 575px) {
+            font-size: 1rem;
+         }
+      }
+
+      span:first-of-type {
+         color: $redColor;
+      }
+
+      span:last-of-type {
+         color: $greenColor;
+      }
+
+      @media (max-width: 575px) {
+         font-size: 1.2rem;
+      }
+
+   }
+
+   &__buttons {
+
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      gap: .5rem;
+
+      > button {
+         border: none;
+         padding: .6rem 1rem;
+         color: white;
+         font-family: $mainFont;
+         font-size: 1rem;
+         font-weight: 500;
+         transition: 300ms;
+         cursor: pointer;
+         border-radius: .4rem;
+         box-shadow: 3px 3px 10px 0 rgba($darkColor, 0.367);
+
+         @media (max-width: 575px) {
+            font-size: .8rem;
+            padding: .4rem .9rem;
+         }
+      }
+
+      &__reset {
+         background-color: rgba($redColor, .8);
+
+         &:hover {
+            background-color: $redColor;
+         }
+      }
+
+      &__save {
+         background-color: rgba($greenColor, .8);
+
+         &:hover {
+            background-color: $greenColor;
+         }
+      }
+   }
+}
